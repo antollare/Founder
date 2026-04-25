@@ -1,0 +1,3 @@
+[submodule "reyengine"]
+	path = reyengine
+	url = https://gitlab.richmondelectronicdesign.com/games/reyengine.git
