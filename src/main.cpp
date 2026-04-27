@@ -1,9 +1,11 @@
 #include "Logger.h"
 //#include "GameMap.h"
+#include "GameMap.h"
 #include "Window.h"
 #include "TextureRect.h"
 
 #include "Label.h"
+#include "yaml-cpp/node/type.h"
 
 using namespace std;
 using namespace ReyEngine;
@@ -25,6 +27,10 @@ int main(int argc, char** argv){
 	auto& window = Application::createWindowPrototype("Founder", screenWidth, screenHeight, {WindowFlags::RESIZE}, 60)->createWindow();
 	window.setInternalLogLevel(LOG_ALL);
 	auto root = window.getCanvas();
+
+	auto map = make_child<GameMap>(root, "map");
+	map->setAnchoring(Anchor::FILL);
+	map->setResolution(getWindowSize());
 
 	window.exec();
 	return 0;

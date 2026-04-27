@@ -33,6 +33,7 @@ set(REY_ENABLE_LUA ON CACHE BOOL "" FORCE)
 add_subdirectory(reyengine)
 add_executable(${PROJECT_NAME}
         src/main.cpp
+        src/GameMap.cpp
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE
